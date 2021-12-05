@@ -26,7 +26,7 @@ export const getStaticPaths = async () => {
 };
 
 // need to do a second fetch request to retrieve single item based off of current item
-export async function getStaticProps(params) {
+export const getStaticProps = async ({ params }) => {
   //returns array even if there is only 1 item
   const { items } = await client.getEntries({
     content_type: "recipe",
@@ -36,7 +36,7 @@ export async function getStaticProps(params) {
   return {
     props: { recipe: items[0] },
   };
-}
+};
 
 export default function RecipeDetails({ recipe }) {
   const {
