@@ -1,7 +1,7 @@
 import { createClient } from "contentful";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
 import Skeleton from "../../components/Skeleton";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 // first client fetch is at build time to get request to generate paths
 const client = createClient({
@@ -43,6 +43,7 @@ export const getStaticProps = async ({ params }) => {
 
 export default function RecipeDetails({ recipe }) {
   if (!recipe) return <Skeleton />;
+
   const {
     featuredImage,
     title,
