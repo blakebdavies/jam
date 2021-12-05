@@ -3,13 +3,13 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 
 export default function NotFound() {
-    cont router = useRouter();
+  const router = useRouter();
 
-    useEffect(() =>{
-        setTimeout(() =>{
-            router.push('/')
-        }, 4000)
-    }, [])
+  useEffect(() => {
+    setTimeout(() => {
+      router.push("/");
+    }, 4000);
+  }, []);
 
   return (
     <div className="not-found">
