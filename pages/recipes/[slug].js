@@ -34,6 +34,14 @@ export const getStaticProps = async ({ params }) => {
     "fields.slug": params.slug,
   });
 
+  if (!items.length) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
   return {
     props: { recipe: items[0] },
     // set to number in seconds which reps how often at most when Next can query for updates
