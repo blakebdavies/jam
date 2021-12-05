@@ -12,6 +12,8 @@ export async function getStaticProps() {
   return {
     props: {
       recipes: res.items,
+      // set to number in seconds which reps how often at most when Next can query for updates
+      revalidate: 1,
     },
   };
 }
